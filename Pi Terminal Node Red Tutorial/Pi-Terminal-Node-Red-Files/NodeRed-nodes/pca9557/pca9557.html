@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pca9557',{
+        category: 'elecrow',
+        color: '#a6aacf',
+        defaults: {
+            name: {value:""},
+            pin: {value:"",required:true},
+            value: {value:"",required:true}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "/home/pi/myNode/pca9557/UI.png",
+        label: function() {
+            return this.name||"pca9557";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="pca9557">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="PCA9557">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pin"><i class="fa fa-thumb-tack"></i> Pin</label>
+        <select id="node-input-pin">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-value"><i class="fa fa-toggle-on"></i> Value</label>
+        <select id="node-input-value">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="pca9557">
+    <p>A simple node that enables PCA9557</p>
+</script>

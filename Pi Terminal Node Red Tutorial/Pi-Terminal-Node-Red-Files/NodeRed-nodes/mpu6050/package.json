@@ -1,0 +1,19 @@
+{
+  "name": "mpu6050",
+  "version": "0.0.1",
+  "description": "enable for mpu6050_crowtail",
+  "main": ".js",
+  "node-red" : {
+        "nodes": {
+            "lower-case": "mpu6050.js"
+        }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mpu6050"
+  ],
+  "author": "lee",
+  "license": "ISC"
+}

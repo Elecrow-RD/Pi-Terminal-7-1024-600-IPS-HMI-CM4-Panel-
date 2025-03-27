@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('max30102',{
+        category: 'elecrow',
+        color: '#efee03',
+        defaults: {
+            name: {value:""}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "/home/pi/myNode/pulse/UI.png",
+        label: function() {
+            return this.name||"max30102";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="max30102">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="max30102">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="max30102">
+    <p>A simple node that enable max30102</p>
+</script>

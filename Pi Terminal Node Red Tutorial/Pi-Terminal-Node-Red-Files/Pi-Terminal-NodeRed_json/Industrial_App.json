@@ -1,0 +1,1162 @@
+[
+    {
+        "id": "296e2b77b8d592a4",
+        "type": "tab",
+        "label": "flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "089c4f456019ed8a",
+        "type": "i2c scan",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "busno": "1",
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "663dfbdcb4b2cf70"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "388c2db285083642",
+        "type": "inject",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "089c4f456019ed8a"
+            ]
+        ]
+    },
+    {
+        "id": "663dfbdcb4b2cf70",
+        "type": "debug",
+        "z": "296e2b77b8d592a4",
+        "name": "i2c scan",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 400,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1528f93b8776f392",
+        "type": "serial in",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "serial": "5f3c9c64d34d1690",
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "8f8b0968812ceb53",
+                "ce0686791dae5f08"
+            ]
+        ]
+    },
+    {
+        "id": "8f8b0968812ceb53",
+        "type": "debug",
+        "z": "296e2b77b8d592a4",
+        "name": "ttyAMA2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 260,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a3989e0830227d80",
+        "type": "serial out",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "serial": "5f3c9c64d34d1690",
+        "x": 370,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "304c417f5d042cc2",
+        "type": "ui_text_input",
+        "z": "296e2b77b8d592a4",
+        "d": true,
+        "name": "",
+        "label": "Serial RS485 inputBrowser",
+        "tooltip": "",
+        "group": "d82c0c4024caa8bb",
+        "order": 2,
+        "width": 15,
+        "height": 3,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "a3989e0830227d80"
+            ]
+        ]
+    },
+    {
+        "id": "ce0686791dae5f08",
+        "type": "ui_text",
+        "z": "296e2b77b8d592a4",
+        "d": true,
+        "group": "d82c0c4024caa8bb",
+        "order": 1,
+        "width": 15,
+        "height": 3,
+        "name": "",
+        "label": "RS485 Recv:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 270,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e2701f86723f32fe",
+        "type": "camerapi-takephoto",
+        "z": "296e2b77b8d592a4",
+        "d": true,
+        "filemode": "1",
+        "filename": "test",
+        "filedefpath": "1",
+        "filepath": "",
+        "fileformat": "jpeg",
+        "resolution": "5",
+        "rotation": "0",
+        "fliph": "0",
+        "flipv": "0",
+        "brightness": "50",
+        "contrast": "0",
+        "sharpness": "0",
+        "quality": "80",
+        "imageeffect": "none",
+        "exposuremode": "auto",
+        "iso": "0",
+        "agcwait": "1.0",
+        "led": "0",
+        "awb": "auto",
+        "name": "",
+        "x": 800,
+        "y": 80,
+        "wires": [
+            [
+                "d3fd475208796dcb",
+                "b51c32df.79e9f"
+            ]
+        ]
+    },
+    {
+        "id": "4ffc86a9e1cd1bb6",
+        "type": "inject",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 650,
+        "y": 80,
+        "wires": [
+            [
+                "e2701f86723f32fe"
+            ]
+        ]
+    },
+    {
+        "id": "d3fd475208796dcb",
+        "type": "debug",
+        "z": "296e2b77b8d592a4",
+        "name": "camera",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 960,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b51c32df.79e9f",
+        "type": "file in",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "filename": "/home/pi/Pictures/test.png",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1010,
+        "y": 100,
+        "wires": [
+            [
+                "b1a56d30.85714"
+            ]
+        ]
+    },
+    {
+        "id": "b1a56d30.85714",
+        "type": "base64",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 980,
+        "y": 160,
+        "wires": [
+            [
+                "eec9916b.6e4a5"
+            ]
+        ]
+    },
+    {
+        "id": "eec9916b.6e4a5",
+        "type": "ui_template",
+        "z": "296e2b77b8d592a4",
+        "d": true,
+        "group": "eea09010a27bf209",
+        "name": "Display Image",
+        "order": 2,
+        "width": 9,
+        "height": 6,
+        "format": "<img src=\"data:image/png;base64,{{msg.payload}}\" style=\"width: 100%; height: auto;\">",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1140,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "370e29202ac60e84",
+        "type": "mqtt in",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "topic": "esp32/temperature",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "6193b9767af23365",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 650,
+        "y": 340,
+        "wires": [
+            [
+                "e51c619ee53ed1b1",
+                "ee5826485085c291",
+                "e939bd5f6eb1760d",
+                "0cd16018e9ac2ca1",
+                "14c042f5ef232bee"
+            ]
+        ]
+    },
+    {
+        "id": "e51c619ee53ed1b1",
+        "type": "debug",
+        "z": "296e2b77b8d592a4",
+        "name": "from esp32 temp detect",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2f77ba2d9a1e5c51",
+        "type": "mqtt in",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "topic": "esp32/humidity",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "6193b9767af23365",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 660,
+        "y": 500,
+        "wires": [
+            [
+                "5fbe4c8f66dd145f",
+                "104349049b20fd8a",
+                "0cd16018e9ac2ca1",
+                "1a80c677c7de4dce",
+                "e9126f3218b8a8b7"
+            ]
+        ]
+    },
+    {
+        "id": "5fbe4c8f66dd145f",
+        "type": "debug",
+        "z": "296e2b77b8d592a4",
+        "name": "from esp32 humi detect",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ee5826485085c291",
+        "type": "ui_gauge",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "group": "c014efb4a23dbe6f",
+        "order": 2,
+        "width": 10,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Temp",
+        "label": "℃",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "65",
+        "diff": false,
+        "className": "",
+        "x": 830,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5496e5b6dbd2dd64",
+        "type": "pca9557",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "pin": "0",
+        "value": "1",
+        "x": 1540,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/rpi.svg"
+    },
+    {
+        "id": "3a59e0f7c8aa23e8",
+        "type": "ui_switch",
+        "z": "296e2b77b8d592a4",
+        "d": true,
+        "name": "",
+        "label": "RS485 Send Enable",
+        "tooltip": "",
+        "group": "d82c0c4024caa8bb",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "d1cf74645d931c2a"
+            ]
+        ]
+    },
+    {
+        "id": "d1cf74645d931c2a",
+        "type": "rpi-gpio out",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "pin": "11",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 320,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "26d3dc888473e7ac",
+        "type": "comment",
+        "z": "296e2b77b8d592a4",
+        "name": "RS485 control",
+        "info": "",
+        "x": 110,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "df5794b8c0e40492",
+        "type": "comment",
+        "z": "296e2b77b8d592a4",
+        "name": "PCA9557 control ",
+        "info": "",
+        "x": 1260,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "188a9706e4f022fc",
+        "type": "ui_switch",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "label": "user led",
+        "tooltip": "",
+        "group": "305aba498b652f78",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1240,
+        "y": 320,
+        "wires": [
+            [
+                "0989cd0ce8703a4a"
+            ]
+        ]
+    },
+    {
+        "id": "3137b177f52689b4",
+        "type": "ui_switch",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "label": "buzzer",
+        "tooltip": "",
+        "group": "305aba498b652f78",
+        "order": 3,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "buz",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1230,
+        "y": 380,
+        "wires": [
+            [
+                "71bd0d75d54a8d9a"
+            ]
+        ]
+    },
+    {
+        "id": "b09049a3266a85df",
+        "type": "ui_switch",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "label": "relay",
+        "tooltip": "",
+        "group": "305aba498b652f78",
+        "order": 5,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "rel",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1230,
+        "y": 440,
+        "wires": [
+            [
+                "bc266d9df5cdbde2"
+            ]
+        ]
+    },
+    {
+        "id": "0989cd0ce8703a4a",
+        "type": "function",
+        "z": "296e2b77b8d592a4",
+        "name": "led_func",
+        "func": "let outputmsgs = {};\noutputmsgs.pin = 1;\noutputmsgs.val = msg.payload ? 1 : 0;\nmsg.outputmsgs = outputmsgs;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 320,
+        "wires": [
+            [
+                "5496e5b6dbd2dd64"
+            ]
+        ]
+    },
+    {
+        "id": "71bd0d75d54a8d9a",
+        "type": "function",
+        "z": "296e2b77b8d592a4",
+        "name": "buzzer_func",
+        "func": "let outputmsgs = {};\noutputmsgs.pin = 0;\noutputmsgs.val = msg.payload ? 0 : 1;\nmsg.outputmsgs = outputmsgs;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 380,
+        "wires": [
+            [
+                "5496e5b6dbd2dd64"
+            ]
+        ]
+    },
+    {
+        "id": "bc266d9df5cdbde2",
+        "type": "function",
+        "z": "296e2b77b8d592a4",
+        "name": "relay_func",
+        "func": "let outputmsgs = {};\noutputmsgs.pin = 7;\noutputmsgs.val = msg.payload ? 1 : 0;\nmsg.outputmsgs = outputmsgs;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 440,
+        "wires": [
+            [
+                "5496e5b6dbd2dd64"
+            ]
+        ]
+    },
+    {
+        "id": "041e89b05047a272",
+        "type": "comment",
+        "z": "296e2b77b8d592a4",
+        "name": "MQTT receive HMI temo and humi data",
+        "info": "",
+        "x": 710,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2e21b235214e9837",
+        "type": "comment",
+        "z": "296e2b77b8d592a4",
+        "name": "scan iic address",
+        "info": "",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "104349049b20fd8a",
+        "type": "function",
+        "z": "296e2b77b8d592a4",
+        "name": "function 1",
+        "func": "var temp = msg.payload;\nvar isWet = false;\nif (temp > 65) {\n    isWet = true;\n} else {\n    isWet = false;\n}\nmsg.payload = isWet;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 440,
+        "wires": [
+            [
+                "b09049a3266a85df"
+            ]
+        ]
+    },
+    {
+        "id": "e939bd5f6eb1760d",
+        "type": "function",
+        "z": "296e2b77b8d592a4",
+        "name": "function 2",
+        "func": "var temp = msg.payload;\nvar isHot = false;\nif (temp > 65) {\n    isHot = true;\n} else {\n    isHot = false;\n}\nmsg.payload = isHot;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 380,
+        "wires": [
+            [
+                "3137b177f52689b4"
+            ]
+        ]
+    },
+    {
+        "id": "0cd16018e9ac2ca1",
+        "type": "function",
+        "z": "296e2b77b8d592a4",
+        "name": "function 3",
+        "func": "var isValid = false;\n\nif (typeof msg.payload === 'number' && !isNaN(msg.payload)) {\n    isValid = true;\n}\nmsg.payload = isValid;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 320,
+        "wires": [
+            [
+                "188a9706e4f022fc"
+            ]
+        ]
+    },
+    {
+        "id": "1a80c677c7de4dce",
+        "type": "ui_chart",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "group": "c014efb4a23dbe6f",
+        "order": 3,
+        "width": 10,
+        "height": 6,
+        "label": "humidityChart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14c042f5ef232bee",
+        "type": "ui_chart",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "group": "c014efb4a23dbe6f",
+        "order": 4,
+        "width": 10,
+        "height": 6,
+        "label": "temperatureChart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 870,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9126f3218b8a8b7",
+        "type": "ui_gauge",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "group": "c014efb4a23dbe6f",
+        "order": 1,
+        "width": 10,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Humi",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "60",
+        "diff": false,
+        "className": "",
+        "x": 830,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "25f46aa08259ec52",
+        "type": "ui_slider",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "label": "temp controler",
+        "tooltip": "",
+        "group": "305aba498b652f78",
+        "order": 7,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "30",
+        "step": 1,
+        "className": "",
+        "x": 1220,
+        "y": 520,
+        "wires": [
+            [
+                "c918a83333fb4940"
+            ]
+        ]
+    },
+    {
+        "id": "c918a83333fb4940",
+        "type": "ui_gauge",
+        "z": "296e2b77b8d592a4",
+        "name": "",
+        "group": "305aba498b652f78",
+        "order": 8,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "temp controler info",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#0058e6",
+            "#ca3838"
+        ],
+        "seg1": "16",
+        "seg2": "26",
+        "diff": false,
+        "className": "",
+        "x": 1410,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "9a54579b3808f531",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bdd726f46e44ddbd",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "097a0ebc80c7d4cd",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6d5425bbc2ca3232",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "ae38f0e15b5a1ddb",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "65cd654e7f67f096",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "bcfd0798aa4b16ef",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "64b1cc3aea755c98",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "0d20f3b73ddb4758",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "1d38b98ef1126178",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 11,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "216d9a1fb8258924",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d3219b425bd00599",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "eea09010a27bf209",
+        "order": 13,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "d7c9dfa7e24b4cff",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "305aba498b652f78",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4c000b5e0ffd18d8",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "305aba498b652f78",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0c497df34323570e",
+        "type": "ui_spacer",
+        "z": "296e2b77b8d592a4",
+        "name": "spacer",
+        "group": "305aba498b652f78",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5f3c9c64d34d1690",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/ttyAMA2",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "\\n",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "d82c0c4024caa8bb",
+        "type": "ui_group",
+        "name": "Serial",
+        "tab": "6c0499d7f0e978bb",
+        "order": 4,
+        "disp": true,
+        "width": 15,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "eea09010a27bf209",
+        "type": "ui_group",
+        "d": true,
+        "name": "camera",
+        "tab": "6c0499d7f0e978bb",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6193b9767af23365",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "nodered-in",
+        "birthQos": "1",
+        "birthRetain": "false",
+        "birthPayload": "node-red in",
+        "birthMsg": {},
+        "closeTopic": "nodered-out",
+        "closeQos": "1",
+        "closeRetain": "false",
+        "closePayload": "node-red out",
+        "closeMsg": {},
+        "willTopic": "nodered-will",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "nodered unplanned abort",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c014efb4a23dbe6f",
+        "type": "ui_group",
+        "name": "temp and humi",
+        "tab": "6c0499d7f0e978bb",
+        "order": 1,
+        "disp": true,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "305aba498b652f78",
+        "type": "ui_group",
+        "name": "PCA9557",
+        "tab": "6c0499d7f0e978bb",
+        "order": 3,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6c0499d7f0e978bb",
+        "type": "ui_tab",
+        "name": "Elecrow for industry",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

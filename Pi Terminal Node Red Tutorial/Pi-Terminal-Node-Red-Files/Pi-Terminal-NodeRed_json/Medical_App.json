@@ -1,0 +1,394 @@
+[
+    {
+        "id": "81d32c34d77268a7",
+        "type": "tab",
+        "label": "flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "694a8a64a7102298",
+        "type": "pulse",
+        "z": "81d32c34d77268a7",
+        "name": "",
+        "x": 270,
+        "y": 120,
+        "wires": [
+            [
+                "199d47520299e2a8",
+                "12ef547ef25315c4",
+                "c838025a9b044660",
+                "a0f364f8c38154ac"
+            ]
+        ]
+    },
+    {
+        "id": "db1b776f9661a08c",
+        "type": "inject",
+        "z": "81d32c34d77268a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "694a8a64a7102298",
+                "6040d7a27e3c8a63"
+            ]
+        ]
+    },
+    {
+        "id": "199d47520299e2a8",
+        "type": "debug",
+        "z": "81d32c34d77268a7",
+        "name": "pulse data",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6040d7a27e3c8a63",
+        "type": "ui_switch",
+        "z": "81d32c34d77268a7",
+        "name": "pulse detect switch",
+        "label": "pulse detect switch",
+        "tooltip": "",
+        "group": "13092a19a4c0a3cf",
+        "order": 1,
+        "width": 4,
+        "height": 2,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "694a8a64a7102298"
+            ]
+        ]
+    },
+    {
+        "id": "12ef547ef25315c4",
+        "type": "ui_chart",
+        "z": "81d32c34d77268a7",
+        "name": "",
+        "group": "13092a19a4c0a3cf",
+        "order": 5,
+        "width": 12,
+        "height": 6,
+        "label": "pulse data",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "200",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 430,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c838025a9b044660",
+        "type": "ui_text",
+        "z": "81d32c34d77268a7",
+        "group": "13092a19a4c0a3cf",
+        "order": 2,
+        "width": 8,
+        "height": 2,
+        "name": "",
+        "label": "pulse data",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 430,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4a1c584026407e08",
+        "type": "inject",
+        "z": "81d32c34d77268a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 710,
+        "y": 60,
+        "wires": [
+            [
+                "037a4dbb1cacff51",
+                "f1f5dbaf13d27450"
+            ]
+        ]
+    },
+    {
+        "id": "c62895d4201c5600",
+        "type": "debug",
+        "z": "81d32c34d77268a7",
+        "name": "oximetry",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "037a4dbb1cacff51",
+        "type": "ui_switch",
+        "z": "81d32c34d77268a7",
+        "name": "Oxygen Detection Switch",
+        "label": "oximetry detect switch",
+        "tooltip": "",
+        "group": "13092a19a4c0a3cf",
+        "order": 3,
+        "width": 4,
+        "height": 2,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 700,
+        "y": 140,
+        "wires": [
+            [
+                "f1f5dbaf13d27450"
+            ]
+        ]
+    },
+    {
+        "id": "5ea0aec9426c55e0",
+        "type": "ui_chart",
+        "z": "81d32c34d77268a7",
+        "name": "",
+        "group": "13092a19a4c0a3cf",
+        "order": 6,
+        "width": 12,
+        "height": 6,
+        "label": "oximetry data",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "90",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1100,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c099d15a3766a7f9",
+        "type": "ui_text",
+        "z": "81d32c34d77268a7",
+        "group": "13092a19a4c0a3cf",
+        "order": 4,
+        "width": 8,
+        "height": 2,
+        "name": "",
+        "label": "oximetry data",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1100,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f1f5dbaf13d27450",
+        "type": "max30102",
+        "z": "81d32c34d77268a7",
+        "name": "",
+        "x": 910,
+        "y": 140,
+        "wires": [
+            [
+                "c62895d4201c5600",
+                "c099d15a3766a7f9",
+                "5ea0aec9426c55e0"
+            ]
+        ]
+    },
+    {
+        "id": "a0f364f8c38154ac",
+        "type": "ui_level",
+        "z": "81d32c34d77268a7",
+        "group": "13092a19a4c0a3cf",
+        "order": 7,
+        "width": 24,
+        "height": 3,
+        "name": "",
+        "label": "pulse datect",
+        "colorHi": "#e60000",
+        "colorWarn": "#ff9900",
+        "colorNormal": "#00b33c",
+        "colorOff": "#595959",
+        "min": 0,
+        "max": "200",
+        "segWarn": "70",
+        "segHigh": "110",
+        "unit": "B/M",
+        "layout": "sh",
+        "channelA": "",
+        "channelB": "",
+        "decimals": 0,
+        "animations": "rocket",
+        "shape": "3",
+        "colorschema": "fixed",
+        "textoptions": "default",
+        "colorText": "#eeeeee",
+        "fontLabel": "",
+        "fontValue": "",
+        "fontSmall": "",
+        "colorFromTheme": true,
+        "textAnimations": true,
+        "hideValue": false,
+        "tickmode": "auto",
+        "peakmode": false,
+        "property": "payload",
+        "peaktime": 3000,
+        "x": 410,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "13092a19a4c0a3cf",
+        "type": "ui_group",
+        "name": "medical",
+        "tab": "de829934348a1330",
+        "order": 1,
+        "disp": true,
+        "width": 24,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "de829934348a1330",
+        "type": "ui_tab",
+        "name": "Elecrow for medical",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

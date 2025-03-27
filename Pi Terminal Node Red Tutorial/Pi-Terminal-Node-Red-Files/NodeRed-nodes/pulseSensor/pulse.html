@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pulse',{
+        category: 'elecrow',
+        color: '#a6ff07',
+        defaults: {
+            name: {value:""}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "/home/pi/myNode/pulse/UI.png",
+        label: function() {
+            return this.name||"pulse";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="pulse">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="PULSE">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="pulse">
+    <p>A simple node that enable Crowtail pulse</p>
+</script>

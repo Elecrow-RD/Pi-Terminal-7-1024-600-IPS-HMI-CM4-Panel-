@@ -1,0 +1,16 @@
+{
+  "name": "max30102",
+  "version": "0.0.1",
+  "description": "PiTerminal for using max30102 sensor",
+  "main": ".js",
+  "node-red" : {
+        "nodes": {
+            "lower-case": "max30102.js"
+        }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lee",
+  "license": "ISC"
+}
